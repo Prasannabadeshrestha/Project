@@ -16,7 +16,7 @@ Here you will learn the basics of creating an eSewa account.
 - Then, after successfully registering the account, you'd have to go through the log in process
 - There, you'll be given a variety of options
 - It is better to load money into your account at first
-- Then you're free to go!! You can send money to another account, check your balance, and even change your passcode!
+- Then you're good to go!! You can send money to another account, check your balance, and even change your passcode!
 - Congrats on successfully using your own eSewa account :star_struck:
 
 ### Important features used
