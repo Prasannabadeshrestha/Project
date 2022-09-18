@@ -1,6 +1,6 @@
 
 # eSewa
-![eSewa](esewa-icon-large.png)
+# ![eSewa](esewa-icon-large.png)
 
 ## Description
 
