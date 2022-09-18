@@ -19,7 +19,7 @@ struct customers
 int main()
 {
     struct customers customer, customerr;
-    FILE *fe, *fes;//for customer 1 and 2
+    FILE *fe; //for customer 1 and 2
     //file name and customers ID
     char eSewa[50], ID[50], ID1[50], mpin[50];
 
