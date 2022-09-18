@@ -19,11 +19,10 @@ struct customers
 int main()
 {
     struct customers customer, customerr;
-    FILE *fe; // for customer 1 and 2
-    // file name and customers ID
+    FILE *fe; 
     char eSewa[50], ID[50], ID1[50], mpin[50];
 
-    int chosen; // to choose both login/register and other options
+    int chosen; 
     char cont = 'Y';
     float amount;
 
@@ -62,7 +61,6 @@ int main()
         // store customer, struct,no.of instance and fe pointer
         fwrite(&customer, sizeof(struct customers), 1, fe);
 
-        // successfully written file and registered acc
         if (fwrite != 0)
         {
             printf("\n\n\t.....Congratualations!! You have successfully registered your account.....");
@@ -73,7 +71,7 @@ int main()
         }
         fclose(fe);
     }
-    // take input from user and extract info from file if pin matched: load and send money
+    
     if (chosen == 1)
     {
         system("clear");
@@ -97,7 +95,7 @@ int main()
             fread(&customer, sizeof(struct customers), 1, fe);
             fclose(fe);
 
-            if (!strcmp(mpin, customer.MPIN)) // comparing previously written pin and currently
+            if (!strcmp(mpin, customer.MPIN)) 
 
             {
                 while (cont == 'Y')
@@ -112,26 +110,26 @@ int main()
                     printf("\n\nChoose:");
                     scanf("%d", &chosen);
 
-                    switch (chosen) // for cases
+                    switch (chosen) 
                     {
                     case 1:
                         system("clear");
                         printf("\nNPR %.2f Balance", customer.Balance);
                         break;
 
-                    case 2: // To load money
+                    case 2: 
                         system("clear");
                         printf("\n\nLoad money:");
                         scanf("%f", &amount);
                         customer.Balance += amount;
-                        fe = fopen(eSewa, "w"); // no concatenate as its already done above
+                        fe = fopen(eSewa, "w"); 
                         fwrite(&customer, sizeof(struct customers), 1, fe);
                         if (fwrite != NULL)
                             printf("\n\n!!!Deposite successful!!!");
                         fclose(fe);
                         break;
 
-                    case 3: // To send money
+                    case 3: 
                         system("clear");
                         printf("\n\nEnter eSewa ID to send money:");
                         scanf("%s", ID);
@@ -152,7 +150,7 @@ int main()
                                 fread(&customerr, sizeof(struct customers), 1, fe);
                                 fclose(fe);
 
-                                customerr.Balance += amount; // update balance of customer 2
+                                customerr.Balance += amount; 
 
                                 fe = fopen(eSewa, "w");
                                 fwrite(&customerr, sizeof(struct customers), 1, fe);
@@ -162,7 +160,7 @@ int main()
                                     printf("\n\n!!!NPR %.2f to %s payment successful!!!", amount, ID);
                                     fclose(fe);
 
-                                    customer.Balance -= amount; // update balance of customer 1
+                                    customer.Balance -= amount; 
                                     strcpy(eSewa, customer.esewa_ID);
                                     fe = fopen(strcat(eSewa, ".esewa"), "w");
                                     fwrite(&customer, sizeof(struct customers), 1, fe);
@@ -172,13 +170,13 @@ int main()
                         }
                         break;
 
-                    case 4: // Reward points: Need to improvise
+                    case 4: 
                         system("clear");
                         printf("Your reward point is: %.2f ", customer.Reward_points++);
                         scanf("%f", &customer.Reward_points);
                         break;
 
-                    case 5: // Topup
+                    case 5: 
                         system("clear");
                         printf("NPR %.2f Balance", customer.Balance);
                         printf("\n\nMobile(10 digits)/Landline(8 digits): ");
@@ -216,7 +214,7 @@ int main()
                                 fread(&customerr, sizeof(struct customers), 1, fe);
                                 fclose(fe);
 
-                                customerr.Balance += amount; // update balance of customer 2
+                                customerr.Balance += amount; 
 
                                 fe = fopen(eSewa, "w");
                                 fwrite(&customerr, sizeof(struct customers), 1, fe);
@@ -239,10 +237,10 @@ int main()
                     case 6:
                         printf("\n\nEnter old MPIN: ");
                         scanf("%s", mpin);
-                        if (!strcmp(mpin, customer.MPIN)) // comparing old pin
+                        if (!strcmp(mpin, customer.MPIN)) 
                             printf("Enter new MPIN: ");
                         scanf("%s", mpin);
-                        strcpy(customer.MPIN, mpin); // copying new pin
+                        strcpy(customer.MPIN, mpin); 
                         fe = fopen(strcat(eSewa, ".esewa"), "w");
                         fwrite(&customer, sizeof(struct customers), 1, fe);
                         if (fwrite != NULL)
@@ -253,7 +251,7 @@ int main()
                         printf("\n\n...Invalid...");
                         break;
                     }
-                    printf("\n\n??Continue to proceed?? [Y/N]: "); // Not working if clicked y
+                    printf("\n\n??Continue to proceed?? [Y/N]: "); 
                     scanf("%s", &cont);
                 }
             }
