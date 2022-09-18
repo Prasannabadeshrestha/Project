@@ -5,7 +5,9 @@
 
 Welcome to eSewa!!:green_circle:
 
-Here you will learn the basics of creating an eSewa account. This is the first project that was assigned to me . At first , I gave a lot of thought to what I should base the project on. Though I decided on the eSewa system only three days before the due date (because to my procrastination in researching alternative options), I hope to someday tackle more challenging projects and ace at it.
+Here you will learn the basics of creating an eSewa account. 
+
+>This is the first project that was assigned to me. At first, I gave a lot of thought to what I should base the project on. Though I decided on the eSewa system only three days before the due date (because to my procrastination in researching alternative options), I hope to someday tackle more challenging projects and ace at it.
 
 ### Instructions
 
