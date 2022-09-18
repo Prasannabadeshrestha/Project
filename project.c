@@ -237,18 +237,20 @@ int main()
                     case 6:
                         printf("\n\nEnter old MPIN: ");
                         scanf("%s", mpin);
-                        if (!strcmp(mpin, customer.MPIN)) 
-                            printf("Enter new MPIN: ");
-                        scanf("%s", mpin);
-                        strcpy(customer.MPIN, mpin); 
-                        fe = fopen(strcat(eSewa, ".esewa"), "w");
-                        fwrite(&customer, sizeof(struct customers), 1, fe);
-                        if (fwrite != NULL)
-                            printf("\n\\n.....MPIN changed....");
-                        fclose(fe);
+                        if (!strcmp(mpin, customer.MPIN))
+                        {
+                            printf("\n\nEnter new MPIN: ");
+                            scanf("%s", mpin);
+                            fe = fopen(eSewa, "w");
+                            strcpy(customer.MPIN, mpin);
+                            fwrite(&customer, sizeof(struct customers), 1, fe);
+                            fclose(fe);
+                            printf("\n\n.....MPIN changed....");
+                        }
+                        else
+                            printf("\n\n...Invalid MPIN...");
 
                     default:
-                        printf("\n\n...Invalid...");
                         break;
                     }
                     printf("\n\n??Continue to proceed?? [Y/N]: "); 
