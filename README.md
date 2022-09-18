@@ -1,5 +1,6 @@
 
-# eSewa:green_circle:
+# eSewa
+![eSewa](esewa-icon-large.png)
 
 ## Description
 
