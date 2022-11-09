@@ -183,6 +183,7 @@ int main()
                         scanf("%s", ID);
                         printf("\n\nHave a promo code? Enter Y or N: ");
                         scanf("%s", &customer.ans);
+                        customer.ans = toupper(customer.ans);
                         fe = fopen(strcat(eSewa, ".esewa"), "r");
                         if (customer.ans == 'Y')
                         {
@@ -214,9 +215,9 @@ int main()
                                 fread(&customerr, sizeof(struct customers), 1, fe);
                                 fclose(fe);
 
-                                customerr.Balance += amount; 
+                                customerr.Balance += amount;
 
-                                fe = fopen(eSewa, "w");
+                                fe = fopen(strcat(eSewa, ".esewa"), "w");
                                 fwrite(&customerr, sizeof(struct customers), 1, fe);
 
                                 if (fwrite != NULL)
@@ -226,14 +227,16 @@ int main()
 
                                     customer.Balance -= amount;
                                     strcpy(eSewa, customer.esewa_ID);
+                                    // fe = fopen(strcat(eSewa, ".esewa"), "w");
                                     fe = fopen(strcat(eSewa, ".esewa"), "w");
+
                                     fwrite(&customer, sizeof(struct customers), 1, fe);
                                     fclose(fe);
                                 }
                             }
                         }
                         break;
-
+                            
                     case 6:
                         printf("\n\nEnter old MPIN: ");
                         scanf("%s", mpin);
