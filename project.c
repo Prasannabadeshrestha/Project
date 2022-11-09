@@ -173,7 +173,8 @@ int main()
                     case 4: 
                         system("clear");
                         printf("Your reward point is: %.2f ", customer.Reward_points++);
-                        scanf("%f", &customer.Reward_points);
+                        printf("\n");
+                        //scanf("%f", &customer.Reward_points);
                         break;
 
                     case 5: 
