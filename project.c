@@ -255,6 +255,7 @@ int main()
                     }
                     printf("\n\n??Continue to proceed?? [Y/N]: "); 
                     scanf("%s", &cont);
+                    cont = toupper(cont);
                 }
             }
             else
