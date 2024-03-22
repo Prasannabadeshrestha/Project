@@ -4,7 +4,7 @@
 
 ## Description
 
-Welcome to eSewa!!:green_circle:
+Welcome to eSewa!!
 
 Here you will learn the basics of creating an eSewa account. 
 
